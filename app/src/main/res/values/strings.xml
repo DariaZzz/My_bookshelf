@@ -7,4 +7,6 @@
     <string name="print_username">Введите имя пользователя</string>
     <string name="print_password">Введите пароль</string>
     <string name="reg">Регистрация</string>
+    <string name="Sign_in">Вход</string>
+    <string name="or_sign_up">Или зарегистрируйтесь</string>
 </resources>
