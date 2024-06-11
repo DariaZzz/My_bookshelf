@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">server_test</string>
+    <string name="Hint">Введите имя</string>
+    <string name="Hint2">Введите фамилию</string>
+    <string name="Button">Send</string>
+    <string name="Answer">Здесь будет ответ</string>
+    <string name="print_username">Введите имя пользователя</string>
+    <string name="print_password">Введите пароль</string>
+    <string name="reg">Регистрация</string>
+</resources>
