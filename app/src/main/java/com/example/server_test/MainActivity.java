@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
                 Toast.makeText(MainActivity.this, "You've been registered!", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(MainActivity.this, Shelf.class);
+                Intent intent = new Intent(MainActivity.this, Registration.class);
                 startActivity(intent);
             }
 

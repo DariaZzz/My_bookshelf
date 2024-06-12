@@ -28,6 +28,9 @@
         <activity android:name=".Shelf">
 
         </activity>
+        <activity android:name=".Registration">
+
+        </activity>
     </application>
 
 </manifest>

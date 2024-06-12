@@ -1,39 +1,46 @@
 package com.example.server_test;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
 import android.widget.SeekBar;
+import android.widget.Spinner;
 import android.widget.TextView;
 
-public class Registration extends AppCompatActivity implements SeekBar.OnSeekBarChangeListener {
+import com.example.server_test.retrofit.RetrofitService;
+import com.example.server_test.retrofit.UserApi;
 
-    private TextView mTextView;
+public class Registration extends AppCompatActivity {
+
+    private int id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.registration);
 
-        final SeekBar seekBar = (SeekBar)findViewById(R.id.seekBar);
-        seekBar.setOnSeekBarChangeListener(this);
+        Intent intent = getIntent();
+        intent.getIntExtra("id", id);
 
-        mTextView = (TextView)findViewById(R.id.textView);
-        mTextView.setText("0");
+        Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.w_m, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        spinner.setAdapter(
+                new NothingSelectedSpinnerAdapter(
+                        adapter,
+                        R.layout.contact_spinner_row_nothing_selected,
+                        // R.layout.contact_spinner_nothing_selected_dropdown, // Optional
+                        this));
+
     }
 
-    @Override
-    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
 
-    }
 
-    @Override
-    public void onStartTrackingTouch(SeekBar seekBar) {
 
-    }
 
-    @Override
-    public void onStopTrackingTouch(SeekBar seekBar) {
-        mTextView.setText(String.valueOf(seekBar.getProgress()));
-    }
 }
 

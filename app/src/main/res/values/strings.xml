@@ -9,4 +9,8 @@
     <string name="reg">Регистрация</string>
     <string name="Sign_in">Вход</string>
     <string name="or_sign_up">Или зарегистрируйтесь</string>
+    <string-array name="w_m">
+        <item>Женский</item>
+        <item>Мужской</item>
+    </string-array>
 </resources>

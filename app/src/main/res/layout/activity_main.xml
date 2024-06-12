@@ -13,28 +13,27 @@
         android:layout_width="match_parent"
         android:layout_height="55sp"
         android:layout_weight="1"
-        android:background="@color/lil">
+        android:background="@color/brown">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
             android:text="My Bookshelf"
             android:textSize="30sp"
-            android:textColor="@color/white"
+            android:textColor="@color/beige"
             android:typeface="serif"></TextView>
 
     </LinearLayout>
 
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/bookshelf"
+        android:layout_width="518dp"
+        android:layout_height="647dp"
         android:layout_weight="7"
+        android:background="@drawable/bookshelf"
         android:gravity="center"
         android:orientation="vertical"
-        android:visibility="visible"
-        tools:visibility="visible">
+        >
 
         <EditText
             android:id="@+id/username"
@@ -67,7 +66,7 @@
             android:id="@+id/but1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/lil"
+            android:backgroundTint="#994F7C5B"
             android:onClick="sign_in"
             android:text="@string/Sign_in"
             android:textColor="@color/white"></Button>
@@ -76,19 +75,19 @@
             android:id="@+id/but2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/lil"
+            android:backgroundTint="#80F6CC64"
             android:onClick="sign_up"
             android:text="@string/reg"></Button>
 
 
-
     </LinearLayout>
+
     <LinearLayout
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="55sp"
         android:layout_gravity="center|bottom"
-        android:background="@color/lil">
+        android:background="@color/brown">
 
     </LinearLayout>
 </LinearLayout>
