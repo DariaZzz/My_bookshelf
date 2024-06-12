@@ -2,7 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
     android:orientation="vertical"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,67 +9,86 @@
 
     tools:context=".MainActivity">
 
-
     <LinearLayout
-        android:orientation="vertical"
-        android:gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-          <EditText
-        android:id="@+id/username"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/print_username"
-        android:textSize="20sp"
-        android:gravity="center">
-
-    </EditText>
-
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/print_password"
-        android:textSize="20sp"
-        android:gravity="center">
-
-    </EditText>
-
-    <Button
-        android:id="@+id/but1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Sign_in"
-        android:onClick="sign_in"
-        >
-    </Button>
-
-    <Button
-        android:id="@+id/but2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/reg"
-        android:onClick="sign_up"
-        >
-    </Button>
-
-
-    <!--<LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="55sp"
+        android:layout_weight="1"
+        android:background="@color/lil">
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/or_sign_up"
-            android:textColor="@color/grey"
-            android:layout_gravity="center|bottom"
-            android:clickable="true"
-            android:onClick="sign_up"
-            >
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="My Bookshelf"
+            android:textSize="30sp"
+            android:textColor="@color/white"
+            android:typeface="serif"></TextView>
 
-        </TextView>
-
-    </LinearLayout>-->
     </LinearLayout>
 
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bookshelf"
+        android:layout_weight="7"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="visible"
+        tools:visibility="visible">
+
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="@string/print_username"
+            android:shadowColor="@color/white"
+            android:textColor="@color/white"
+            android:textColorHint="#CCFFFFFF"
+            android:textSize="20sp">
+
+        </EditText>
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="@string/print_password"
+            android:outlineSpotShadowColor="@color/white"
+            android:shadowColor="@color/white"
+            android:textColor="@color/white"
+            android:textColorHint="#CCFFFFFF"
+            android:textSize="20sp">
+
+        </EditText>
+
+        <Button
+            android:id="@+id/but1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/lil"
+            android:onClick="sign_in"
+            android:text="@string/Sign_in"
+            android:textColor="@color/white"></Button>
+
+        <Button
+            android:id="@+id/but2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/lil"
+            android:onClick="sign_up"
+            android:text="@string/reg"></Button>
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="55sp"
+        android:layout_gravity="center|bottom"
+        android:background="@color/lil">
+
+    </LinearLayout>
 </LinearLayout>

@@ -59,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
                     if(user1.getUsername().equals(username) && user1.getPassword().equals(password)) {
                         Intent intent = new Intent(MainActivity.this, Shelf.class);
                         intent.putExtra("id", user1.getId());
+                        Toast.makeText(MainActivity.this, "You're welcome!", Toast.LENGTH_SHORT).show();
+                        passwordET.getText().clear();
                         startActivity(intent);
                         return;
                     }
