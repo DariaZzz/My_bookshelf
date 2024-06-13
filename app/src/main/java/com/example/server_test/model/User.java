@@ -5,10 +5,13 @@ import java.util.Objects;
 public class User {
 
     private Integer id;
-
-     private String username;
-
+    private String username;
     private String password;
+    private String phone;
+    private String email;
+    private String date_of_birth;
+
+    private String w_m;
 
 
 
@@ -58,5 +61,36 @@ public class User {
         return password;
     }
 
+    public void setDate_of_birth(String date_of_birth) {
+        this.date_of_birth = date_of_birth;
+    }
+
+    public String getDate_of_birth() {
+        return date_of_birth;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setW_m(String w_m) {
+        this.w_m = w_m;
+    }
+
+    public String getW_m() {
+        return w_m;
+    }
 }
 

@@ -36,9 +36,10 @@
         >
 
         <EditText
+            android:background="#80000000"
             android:id="@+id/username"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="35sp"
             android:gravity="center"
             android:hint="@string/print_username"
             android:shadowColor="@color/white"
@@ -49,6 +50,8 @@
         </EditText>
 
         <EditText
+            android:background="#80000000"
+            android:height="35sp"
             android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
