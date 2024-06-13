@@ -31,6 +31,12 @@
         <activity android:name=".Registration">
 
         </activity>
+        <activity android:name=".MyProfile">
+
+        </activity>
+        <activity android:name=".Bookshelf">
+
+        </activity>
     </application>
 
 </manifest>

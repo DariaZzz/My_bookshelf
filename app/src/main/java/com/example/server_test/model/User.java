@@ -10,8 +10,8 @@ public class User {
     private String phone;
     private String email;
     private String date_of_birth;
-
     private String w_m;
+    private String books;
 
 
 
@@ -91,6 +91,14 @@ public class User {
 
     public String getW_m() {
         return w_m;
+    }
+
+    public void setBooks(String books) {
+        this.books = books;
+    }
+
+    public String getBooks() {
+        return books;
     }
 }
 
