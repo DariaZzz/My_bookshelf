@@ -37,6 +37,16 @@
         <activity android:name=".Bookshelf">
 
         </activity>
+
+        <activity android:name=".NewBook">
+
+        </activity>
+        <activity android:name=".LaterBooks">
+
+        </activity>
+        <activity android:name=".BookActivity">
+
+        </activity>
     </application>
 
 </manifest>
