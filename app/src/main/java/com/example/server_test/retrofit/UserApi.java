@@ -1,5 +1,6 @@
 package com.example.server_test.retrofit;
 
+import com.example.server_test.model.Book;
 import com.example.server_test.model.User;
 
 import java.util.List;
@@ -13,6 +14,12 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface UserApi {
+
+    @GET("/users/{id}")
+    Call<User> getUser(@Path("id") int id);
+
+
+
     @GET("/users")
     Call<List<User>> getAllUsers();
 

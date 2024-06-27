@@ -73,11 +73,14 @@ public class NewBook extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<Boolean> call, Response<Boolean> response) {
                         Toast.makeText(NewBook.this, "Book has been succesfully saved", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(NewBook.this, Bookshelf.class);
+                        intent.putExtra("id", id);
+                        startActivity(intent);
                     }
 
                     @Override
                     public void onFailure(Call<Boolean> call, Throwable t) {
-
+                        Toast.makeText(NewBook.this, "Something went wrong...", Toast.LENGTH_SHORT).show();
                     }
                 });
                 finish();

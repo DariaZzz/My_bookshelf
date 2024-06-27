@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder> {
 
     private String[] localDataSet;
+    private String[] localIdes;
 
     /**
      * Provide a reference to the type of views that you are using
@@ -38,14 +39,14 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
  * by RecyclerView
  *
  */
-    public CustomAdapter(String[] dataSet) {
+    public CustomAdapter(String[] dataSet, String[] ides) {
+        localIdes = ides;
         localDataSet = dataSet;
     }
 
     // Create new views (invoked by the layout manager)
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
-        // Create a new view, which defines the UI of the list item
         View view = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.text_row_item, viewGroup, false);
 
@@ -55,13 +56,10 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, final int position) {
-
-        // Get element from your dataset at this position and replace the
-        // contents of the view with that element
         viewHolder.getButton().setText(localDataSet[position]);
+        viewHolder.getButton().setId(Integer.parseInt(localIdes[position]));
     }
 
-    // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
         return localDataSet.length;

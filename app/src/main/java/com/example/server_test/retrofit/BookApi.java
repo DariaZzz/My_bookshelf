@@ -16,6 +16,11 @@ public interface BookApi {
     @GET("/book")
     Call<List<Book>> getAllBooks();
 
+
+
+    @GET("/users/{id}")
+    Call<Book> getBook(@Path("id") int id);
+
     @POST("/book/save")
     Call<Book> saveBook(@Body Book book);
 
