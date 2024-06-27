@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Adapter;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.MainThread;
@@ -137,6 +138,14 @@ public class Bookshelf extends AppCompatActivity {
 
     public void back(View view){
         finish();
+    }
+
+    public void handler(View view){
+
+        Intent intent = new Intent(Bookshelf.this, BookActivity.class);
+        intent.putExtra("id", view.getId());
+        startActivity(intent);
+
     }
 
 

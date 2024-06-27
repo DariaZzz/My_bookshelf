@@ -18,7 +18,7 @@ public interface BookApi {
 
 
 
-    @GET("/users/{id}")
+    @GET("/book/{id}")
     Call<Book> getBook(@Path("id") int id);
 
     @POST("/book/save")
