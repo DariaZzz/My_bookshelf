@@ -83,6 +83,14 @@ public class BookActivity extends AppCompatActivity implements SeekBar.OnSeekBar
 
         book.setReview(bookBinding1.review.getText().toString());
         book.setRate(String.valueOf(bookBinding1.rate.getRating()));
+        String pages = bookBinding1.pages.getText().toString();
+        for(char b: pages.toCharArray()){
+            String s = "123456789";
+            if(s.indexOf(b) == -1){
+                Toast.makeText(BookActivity.this, "The number of pages is wrong.", Toast.LENGTH_SHORT).show();
+                return;
+            }
+        }
         book.setProgress_pages(String.valueOf(bookBinding1.progress.getProgress()));
         book.setPages(bookBinding1.pages.getText().toString());
 
@@ -131,14 +139,14 @@ public class BookActivity extends AppCompatActivity implements SeekBar.OnSeekBar
                 String newBooks = "";
                 for(String b: parsedBooks){
                     if(!b.equals(String.valueOf(book_id)))
-                        newBooks += b;
+                        newBooks = newBooks + b +" ";
                 }
                 User user = new User();
                 user.setBooks(newBooks);
                 userApi.update(user_id, user).enqueue(new Callback<Boolean>() {
                     @Override
                     public void onResponse(Call<Boolean> call, Response<Boolean> response) {
-                        Toast.makeText(BookActivity.this, "Book was succesfully deleted", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(BookActivity.this, "Book was successfully deleted", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(BookActivity.this, Bookshelf.class);
                         intent.putExtra("id", user_id);
                         finish();

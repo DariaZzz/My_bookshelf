@@ -30,8 +30,6 @@ public class NewBook extends AppCompatActivity {
         Intent intent = getIntent();
         id = intent.getIntExtra("id", 0);
 
-
-
     }
 
     public void save(View view){
@@ -53,6 +51,14 @@ public class NewBook extends AppCompatActivity {
         if(name.equals("") && author.equals("")){
             Toast.makeText(NewBook.this, "No name or author.", Toast.LENGTH_SHORT).show();
             return;
+        }
+
+        for(char b: pages.toCharArray()){
+            String s = "123456789";
+            if(s.indexOf(b) == -1){
+                Toast.makeText(NewBook.this, "The number of pages is wrong.", Toast.LENGTH_SHORT).show();
+                return;
+            }
         }
 
         Book book = new Book();

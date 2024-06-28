@@ -31,8 +31,6 @@ public class Shelf extends AppCompatActivity {
 
         Intent intent = getIntent();
         id = intent.getIntExtra("id", 0);
-
-
     }
 
     public void my_profile(View view){
@@ -42,12 +40,6 @@ public class Shelf extends AppCompatActivity {
     }
 
     public void bookshelf(View view){
-
-        RetrofitService retrofitService = new RetrofitService();
-        UserApi userApi = retrofitService.getRetrofit().create(UserApi.class);
-
-
-
         Intent intent = new Intent(Shelf.this, Bookshelf.class);
         intent.putExtra("id", id);
         startActivity(intent);
