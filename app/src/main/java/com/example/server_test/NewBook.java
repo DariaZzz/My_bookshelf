@@ -78,7 +78,7 @@ public class NewBook extends AppCompatActivity {
                     public void onResponse(Call<User> call, Response<User> response) {
                         User user = new User();
                         if(response.body().getBooks() != null)
-                            user.setBooks(response.body().getBooks() + new_book);
+                            user.setBooks(response.body().getBooks() + " " + new_book);
                         else
                             user.setBooks(new_book);
                         userApi.update(id, user).enqueue(new Callback<Boolean>() {

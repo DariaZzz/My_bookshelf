@@ -7,6 +7,7 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
@@ -19,6 +20,8 @@ public interface UserApi {
     Call<User> getUser(@Path("id") int id);
 
 
+    @DELETE("/users/{id}")
+    Call<Boolean> delUser(@Path("id") int id);
 
     @GET("/users")
     Call<List<User>> getAllUsers();

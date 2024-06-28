@@ -209,11 +209,6 @@
             android:layout_weight="1"
             android:gravity="center"
             >
-            <LinearLayout
-                android:gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1">
                 <Button
                     android:backgroundTint="@color/blue1"
                     android:id="@+id/upd"
@@ -223,26 +218,8 @@
                     android:text="Изменить">
 
                 </Button>
-            </LinearLayout>
-
-            <LinearLayout
-                android:gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1">
-                <Button
-                    android:backgroundTint="@color/orange2"
-                    android:id="@+id/del"
-                    android:onClick="delUser"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Удалить">
-
-                </Button>
-            </LinearLayout>
-
-
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="70sp"

@@ -45,11 +45,7 @@ public class Shelf extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void books_later(View view){
-        Intent intent = new Intent(Shelf.this, LaterBooks.class);
-        intent.putExtra("id", id);
-        startActivity(intent);
-    }
+
 
 }
 

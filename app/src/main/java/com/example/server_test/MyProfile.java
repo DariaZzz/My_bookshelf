@@ -56,12 +56,14 @@ public class MyProfile extends AppCompatActivity {
                 else
                     binding.email.setText(not_filled);
 
-                if(!user.getBooks().isEmpty()){
+                if(user.getBooks() == null || user.getBooks().isEmpty()){
+                    binding.numOfBooks.setText("0");
+                }
+                else{
                     String[] b = user.getBooks().split(" ");
                     binding.numOfBooks.setText(String.valueOf(b.length));
                 }
-                else
-                    binding.numOfBooks.setText("0");
+
 
                 binding.image.setImageResource(R.drawable.baseline_person);
             }
@@ -83,10 +85,7 @@ public class MyProfile extends AppCompatActivity {
 
     }
 
-    public void delUser(View view){
 
-
-    }
 
     public void back2(View view){
         finish();
