@@ -60,7 +60,7 @@ public class BookActivity extends AppCompatActivity implements SeekBar.OnSeekBar
                 bookBinding.pages.setText(book.getPages());
                 if(book.getProgress_pages()!=null)
                     bookBinding.progress.setProgress(Integer.valueOf(book.getProgress_pages()));
-                if(book.getPages()!=null)
+                if(!book.getPages().equals(""))
                     bookBinding.progress.setMax(Integer.valueOf(book.getPages()));
                 else
                     bookBinding.progress.setMax(200);
@@ -128,18 +128,21 @@ public class BookActivity extends AppCompatActivity implements SeekBar.OnSeekBar
             public void onResponse(Call<User> call, Response<User> response) {
                 String books = response.body().getBooks();
                 String[] parsedBooks = books.split(" ");
-                ArrayList<String> newBooks = new ArrayList<>();
+                String newBooks = "";
                 for(String b: parsedBooks){
                     if(!b.equals(String.valueOf(book_id)))
-                        newBooks.add(b);
+                        newBooks += b;
                 }
-
                 User user = new User();
-                user.setBooks(newBooks.toString());
+                user.setBooks(newBooks);
                 userApi.update(user_id, user).enqueue(new Callback<Boolean>() {
                     @Override
                     public void onResponse(Call<Boolean> call, Response<Boolean> response) {
                         Toast.makeText(BookActivity.this, "Book was succesfully deleted", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(BookActivity.this, Bookshelf.class);
+                        intent.putExtra("id", user_id);
+                        finish();
+                        startActivity(intent);
                     }
 
                     @Override

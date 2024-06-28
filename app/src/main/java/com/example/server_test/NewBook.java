@@ -66,24 +66,39 @@ public class NewBook extends AppCompatActivity {
             @Override
             public void onResponse(Call<Book> call, Response<Book> response) {
                 UserApi userApi = retrofitService.getRetrofit().create(UserApi.class);
-                User user = new User();
-                user.setId(id);
-                user.setBooks(response.body().getId().toString());
-                userApi.update(id, user).enqueue(new Callback<Boolean>() {
+                String new_book = String.valueOf(response.body().getId());
+                userApi.getUser(id).enqueue(new Callback<User>() {
                     @Override
-                    public void onResponse(Call<Boolean> call, Response<Boolean> response) {
-                        Toast.makeText(NewBook.this, "Book has been succesfully saved", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(NewBook.this, Bookshelf.class);
-                        intent.putExtra("id", id);
-                        startActivity(intent);
+                    public void onResponse(Call<User> call, Response<User> response) {
+                        User user = new User();
+                        if(response.body().getBooks() != null)
+                            user.setBooks(response.body().getBooks() + new_book);
+                        else
+                            user.setBooks(new_book);
+                        userApi.update(id, user).enqueue(new Callback<Boolean>() {
+                            @Override
+                            public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                                Toast.makeText(NewBook.this, "Book has been succesfully saved", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(NewBook.this, Bookshelf.class);
+                                intent.putExtra("id", id);
+                                startActivity(intent);
+                            }
+
+                            @Override
+                            public void onFailure(Call<Boolean> call, Throwable t) {
+                                Toast.makeText(NewBook.this, "Something went wrong...", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                        finish();
+
                     }
 
                     @Override
-                    public void onFailure(Call<Boolean> call, Throwable t) {
-                        Toast.makeText(NewBook.this, "Something went wrong...", Toast.LENGTH_SHORT).show();
+                    public void onFailure(Call<User> call, Throwable t) {
+
                     }
                 });
-                finish();
+
             }
 
             @Override
