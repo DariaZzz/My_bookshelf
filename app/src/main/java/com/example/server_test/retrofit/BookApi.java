@@ -7,6 +7,7 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
@@ -26,4 +27,7 @@ public interface BookApi {
 
     @PUT("/book/{id}")
     Call<Boolean> update(@Path("id") int id, @Body Book book);
+
+    @DELETE("/book/{id}")
+    Call<Boolean> delBook(@Path("id") int id);
 }

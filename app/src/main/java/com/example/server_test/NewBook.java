@@ -96,6 +96,9 @@ public class NewBook extends AppCompatActivity {
     }
 
     public void back(View view){
+        Intent intent = new Intent(NewBook.this, Bookshelf.class);
+        intent.putExtra("id", id);
         finish();
+        startActivity(intent);
     }
 }

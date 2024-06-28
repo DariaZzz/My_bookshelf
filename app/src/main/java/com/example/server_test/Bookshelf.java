@@ -143,8 +143,10 @@ public class Bookshelf extends AppCompatActivity {
     public void handler(View view){
 
         Intent intent = new Intent(Bookshelf.this, BookActivity.class);
-        intent.putExtra("id", view.getId());
+        intent.putExtra("book_id", view.getId());
+        intent.putExtra("user_id", id);
         startActivity(intent);
+        finish();
 
     }
 
