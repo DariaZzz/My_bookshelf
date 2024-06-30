@@ -85,7 +85,7 @@ public class BookActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         book.setRate(String.valueOf(bookBinding1.rate.getRating()));
         String pages = bookBinding1.pages.getText().toString();
         for(char b: pages.toCharArray()){
-            String s = "123456789";
+            String s = "0123456789";
             if(s.indexOf(b) == -1){
                 Toast.makeText(BookActivity.this, "The number of pages is wrong.", Toast.LENGTH_SHORT).show();
                 return;
@@ -149,8 +149,8 @@ public class BookActivity extends AppCompatActivity implements SeekBar.OnSeekBar
                         Toast.makeText(BookActivity.this, "Book was successfully deleted", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(BookActivity.this, Bookshelf.class);
                         intent.putExtra("id", user_id);
-                        finish();
                         startActivity(intent);
+                        finish();
                     }
 
                     @Override
@@ -172,8 +172,8 @@ public class BookActivity extends AppCompatActivity implements SeekBar.OnSeekBar
     public void back1(View view){
         Intent intent = new Intent(BookActivity.this, Bookshelf.class);
         intent.putExtra("id", user_id);
-        finish();
         startActivity(intent);
+        finish();
     }
 
     @Override

@@ -54,7 +54,7 @@ public class NewBook extends AppCompatActivity {
         }
 
         for(char b: pages.toCharArray()){
-            String s = "123456789";
+            String s = "0123456789";
             if(s.indexOf(b) == -1){
                 Toast.makeText(NewBook.this, "The number of pages is wrong.", Toast.LENGTH_SHORT).show();
                 return;
@@ -78,9 +78,9 @@ public class NewBook extends AppCompatActivity {
                     public void onResponse(Call<User> call, Response<User> response) {
                         User user = new User();
                         if(response.body().getBooks() != null)
-                            user.setBooks(response.body().getBooks() + " " + new_book);
+                            user.setBooks(response.body().getBooks() + new_book + " ");
                         else
-                            user.setBooks(new_book);
+                            user.setBooks(new_book +" ");
                         userApi.update(id, user).enqueue(new Callback<Boolean>() {
                             @Override
                             public void onResponse(Call<Boolean> call, Response<Boolean> response) {
@@ -88,6 +88,7 @@ public class NewBook extends AppCompatActivity {
                                 Intent intent = new Intent(NewBook.this, Bookshelf.class);
                                 intent.putExtra("id", id);
                                 startActivity(intent);
+                                finish();
                             }
 
                             @Override
@@ -96,7 +97,6 @@ public class NewBook extends AppCompatActivity {
                             }
                         });
                         finish();
-
                     }
 
                     @Override
@@ -119,7 +119,7 @@ public class NewBook extends AppCompatActivity {
     public void back(View view){
         Intent intent = new Intent(NewBook.this, Bookshelf.class);
         intent.putExtra("id", id);
-        finish();
         startActivity(intent);
+        finish();
     }
 }
