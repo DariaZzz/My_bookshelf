@@ -44,6 +44,10 @@
         <activity android:name=".LaterBooks">
 
         </activity>
+
+        <activity android:name=".NewLaterBook">
+
+        </activity>
         <activity android:name=".BookActivity">
 
         </activity>

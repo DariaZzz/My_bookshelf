@@ -12,6 +12,7 @@ public class User {
     private String date_of_birth;
     private String w_m;
     private String books;
+    private String later_books;
 
 
 
@@ -99,6 +100,14 @@ public class User {
 
     public String getBooks() {
         return books;
+    }
+
+    public void setLater_books(String later_books) {
+        this.later_books = later_books;
+    }
+
+    public String getLater_books() {
+        return later_books;
     }
 }
 

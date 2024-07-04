@@ -31,7 +31,7 @@
             android:layout_width="200sp"
             android:layout_height="60sp"
             android:text="Новая книга"
-            android:onClick="new_book"
+            android:onClick="new_later_book"
             android:textSize="25sp"
             >
 
@@ -44,7 +44,7 @@
         >
         <androidx.recyclerview.widget.RecyclerView
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            android:id="@+id/recycler_view"
+            android:id="@+id/recycler_view1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
@@ -61,7 +61,7 @@
         android:gravity="center">
         <Button
             android:backgroundTint="@color/green"
-            android:onClick="back"
+            android:onClick="back_and_save"
             android:id="@+id/back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

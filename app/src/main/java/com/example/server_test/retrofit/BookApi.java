@@ -17,8 +17,6 @@ public interface BookApi {
     @GET("/book")
     Call<List<Book>> getAllBooks();
 
-
-
     @GET("/book/{id}")
     Call<Book> getBook(@Path("id") int id);
 
