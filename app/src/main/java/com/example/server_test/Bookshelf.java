@@ -64,7 +64,7 @@ public class Bookshelf extends AppCompatActivity {
     }
 
     public void recyclerStart(String books){
-        if(books != null) {
+        if(books != null && !books.isEmpty()) {
 
             this.books = books;
 

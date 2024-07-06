@@ -55,12 +55,19 @@ public class BookActivity extends AppCompatActivity implements SeekBar.OnSeekBar
                 Book book = response.body();
                 bookBinding.name.setText(book.getName());
                 bookBinding.author.setText(book.getAuthor());
-                bookBinding.review.setText(book.getReview());
-                bookBinding.rate.setRating(Float.valueOf(book.getRate()));
-                bookBinding.pages.setText(book.getPages());
-                if(book.getProgress_pages()!=null)
+                if(!(book.getReview() == null || book.getReview().isEmpty()))
+                    bookBinding.review.setText(book.getReview());
+                else
+                    bookBinding.review.setHint("Введите отзыв");
+                if(!(book.getRate() == null || book.getRate().isEmpty()))
+                    bookBinding.rate.setRating(Float.valueOf(book.getRate()));
+                if(!(book.getPages() == null || book.getPages().isEmpty()))
+                    bookBinding.pages.setText(book.getPages());
+                else
+                    bookBinding.pages.setHint("Введите количество страниц");
+                if(!(book.getProgress_pages()==null || book.getProgress_pages().isEmpty()))
                     bookBinding.progress.setProgress(Integer.valueOf(book.getProgress_pages()));
-                if(!book.getPages().equals(""))
+                if(!(book.getPages() == null || book.getPages().isEmpty()))
                     bookBinding.progress.setMax(Integer.valueOf(book.getPages()));
                 else
                     bookBinding.progress.setMax(200);

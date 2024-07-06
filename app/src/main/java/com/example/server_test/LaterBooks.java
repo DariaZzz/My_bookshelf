@@ -134,10 +134,22 @@ public class LaterBooks extends AppCompatActivity {
     }
 
     public void back_and_save(View view){
-        for(Book book: books_info){
-            SwitchCompat switchCompat = (SwitchCompat) findViewById(book.getId());
-            int new_id = book.getId();
-            if(switchCompat.isChecked()){
+        if(books_info.size() != 0){
+            request(0);
+        }
+        finish();
+    }
+
+    public void request(int index){
+        Boolean flag = true;
+        if(index == books_info.size()){
+            flag = false;
+        }
+        if(flag) {
+            SwitchCompat switchCompat = (SwitchCompat) findViewById(books_info.get(index).getId());
+            int new_id = books_info.get(index).getId();
+
+            if (switchCompat.isChecked()) {
                 RetrofitService retrofitService = new RetrofitService();
                 UserApi userApi = retrofitService.getRetrofit().create(UserApi.class);
 
@@ -145,15 +157,15 @@ public class LaterBooks extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<User> call, Response<User> response) {
                         ArrayList<String> lb;
-                        String updateLb = "", books1="";
+                        String updateLb = "", books1 = "";
                         User user = response.body();
                         User updateUser = new User();
 
                         lb = new ArrayList<String>(Arrays.asList(user.getLater_books().split(" ")));
                         books1 = user.getBooks();
 
-                        for(String id: lb){
-                            if(!id.equals(String.valueOf(new_id))){
+                        for (String id : lb) {
+                            if (!id.equals(String.valueOf(new_id))) {
                                 updateLb = updateLb + id + " ";
                             }
                         }
@@ -168,7 +180,7 @@ public class LaterBooks extends AppCompatActivity {
                             @Override
                             public void onResponse(Call<Boolean> call, Response<Boolean> response) {
                                 Toast.makeText(LaterBooks.this, "The book has been successfully postponed", Toast.LENGTH_SHORT).show();
-
+                                request(index+1);
                             }
 
                             @Override
@@ -186,8 +198,11 @@ public class LaterBooks extends AppCompatActivity {
                 });
 
             }
+            else
+                request(index+1);
+
         }
 
-        finish();
     }
 }
+
