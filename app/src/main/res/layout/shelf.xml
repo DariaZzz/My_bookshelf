@@ -29,6 +29,7 @@
         android:layout_weight="1"
         android:gravity="center">
         <Button
+            android:backgroundTint="@color/green"
             android:id="@+id/bookshelf"
             android:layout_width="160sp"
             android:layout_height="150sp"
@@ -45,6 +46,8 @@
         android:layout_weight="1"
         android:gravity="center">
         <Button
+
+            android:backgroundTint="@color/blue1"
             android:id="@+id/later_books"
             android:layout_width="210sp"
             android:layout_height="150sp"
@@ -62,6 +65,8 @@
         android:onClick="bookshelf"
         android:layout_weight="1">
         <Button
+
+            android:backgroundTint="@color/blue2"
             android:id="@+id/profile"
             android:layout_width="160sp"
             android:layout_height="150sp"

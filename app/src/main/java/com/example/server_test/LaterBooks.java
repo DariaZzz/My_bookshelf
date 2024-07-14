@@ -196,13 +196,11 @@ public class LaterBooks extends AppCompatActivity {
 
                     }
                 });
-
             }
             else
                 request(index+1);
 
         }
-
     }
 }
 

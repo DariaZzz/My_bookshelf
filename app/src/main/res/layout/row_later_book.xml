@@ -9,8 +9,9 @@
     android:gravity="center"
     android:orientation="horizontal">
     <LinearLayout
+        android:background="@color/beige"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="45sp"
         android:layout_gravity="left">
         <TextView
             android:id="@+id/later_name"
